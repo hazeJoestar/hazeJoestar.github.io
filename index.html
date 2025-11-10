@@ -5,22 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Haze's Joestar | Web3 Profile</title>
   
-  <!-- Tailwind CSS (via CDN) -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Particle.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   
-  <!-- Font: Inter (clean & modern) -->
+  <!-- Font Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0f0f1b;
-      color: #e0e0ff;
+      background-color: #0a0a16;
+      color: #e6e6ff;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      /* Custom cursor */
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%23b967ff" opacity="0.7"/><circle cx="12" cy="12" r="4" fill="white"/></svg>') 12 12, auto;
     }
+
     #particles-js {
       position: fixed;
       width: 100%;
@@ -29,27 +34,47 @@
       left: 0;
       z-index: -1;
     }
-    .glow-text {
-      text-shadow: 0 0 10px #b967ff, 0 0 20px #b967ff;
+
+    .glow {
+      text-shadow: 0 0 12px rgba(185, 103, 255, 0.8),
+                   0 0 24px rgba(185, 103, 255, 0.6);
     }
-    .social-icon {
-      transition: transform 0.3s ease, filter 0.3s ease;
+
+    .card-hover {
+      transition: all 0.4s ease;
+      border: 1px solid rgba(185, 103, 255, 0.2);
     }
-    .social-icon:hover {
-      transform: translateY(-4px);
-      filter: drop-shadow(0 0 8px #b967ff);
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(185, 103, 255, 0.25);
+      border-color: rgba(185, 103, 255, 0.5);
+    }
+
+    /* Smooth scroll & focus styles */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #b967ff #0a0a16;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #b967ff;
+      border-radius: 3px;
     }
   </style>
 
-  <!-- Tailwind config (opsional) -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            web3bg: '#0f0f1b',
+            web3bg: '#0a0a16',
             web3accent: '#b967ff',
-            web3text: '#e0e0ff',
+            web3text: '#e6e6ff',
           }
         }
       }
@@ -58,79 +83,73 @@
 </head>
 <body class="bg-web3bg text-web3text min-h-screen flex flex-col">
 
-  <!-- Particles Background -->
   <div id="particles-js"></div>
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-6 py-20 flex flex-col items-center justify-center flex-grow z-10">
-    <div class="text-center max-w-2xl">
-      <!-- Avatar (gunakan GitHub avatar otomatis) -->
-      <img 
-        src="https://github.com/hazeJoestar.png" 
-        alt="Haze's Joestar" 
-        class="w-32 h-32 rounded-full mx-auto mb-6 border-2 border-web3accent shadow-lg"
-      />
+  <main class="container mx-auto px-4 sm:px-6 py-20 flex flex-col items-center justify-center flex-grow z-10">
+    <div class="text-center max-w-2xl w-full">
+      <!-- Avatar -->
+      <div class="mb-8">
+        <img 
+          src="https://github.com/hazeJoestar.png" 
+          alt="Haze's Joestar" 
+          class="w-36 h-36 sm:w-44 sm:h-44 rounded-full mx-auto border-2 border-web3accent shadow-[0_0_30px_rgba(185,103,255,0.4)]"
+        />
+      </div>
 
-      <!-- Nama -->
-      <h1 class="text-4xl md:text-5xl font-bold mb-3 glow-text">Haze's Joestar</h1>
-
-      <!-- Slogan -->
-      <p class="text-lg md:text-xl mb-8 opacity-90">
-        Building decentralized dreams, one commit at a time.
+      <!-- Name & Tagline -->
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 glow">Haze's Joestar</h1>
+      <p class="text-lg sm:text-xl mb-10 opacity-90 max-w-lg mx-auto px-2">
+        Architect of decentralized systems • Web3 explorer • Code alchemist
       </p>
 
-      <!-- Sosial -->
-      <div class="flex justify-center space-x-6 mb-10">
-        <!-- GitHub -->
-        <a href="https://github.com/hazeJoestar" target="_blank" rel="noopener" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Social Links -->
+      <div class="flex justify-center space-x-8 mb-12">
+        <a href="https://github.com/hazeJoestar" target="_blank" rel="noopener" class="text-web3text hover:text-web3accent transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.7 6.44-7.27a4.7 4.7 0 0 0-1.44-3.27 4.5 4.5 0 0 0-.08-3.27s-1.44-.44-3.54 1.7a12.36 12.36 0 0 0-6 0C6.22 2.82 4.78 3.26 4.78 3.26a4.5 4.5 0 0 0-.08 3.27 4.7 4.7 0 0 0-1.44 3.27c0 5.57 3.3 6.92 6.44 7.27A3.37 3.37 0 0 0 9 19.13V19"/>
           </svg>
         </a>
-
-        <!-- Email (ganti your.email@example.com dengan email Anda) -->
-        <a href="mailto:your.email@example.com" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="mailto:your.email@example.com" class="text-web3text hover:text-web3accent transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
         </a>
       </div>
 
-      <!-- Call to Action -->
-      <div class="bg-gray-900/40 backdrop-blur-sm rounded-xl p-6 border border-web3accent/30">
-        <p class="text-sm md:text-base opacity-80">
-          Exploring the frontier of Web3, smart contracts, and open-source innovation.
+      <!-- Profile Card -->
+      <div class="card-hover bg-black/30 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-web3accent/20">
+        <p class="text-base sm:text-lg italic opacity-85">
+          “In a world of centralized giants, I build with open code and decentralize hope.”
         </p>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="py-6 text-center text-sm opacity-60">
-    © 2025 Haze's Joestar • Web3 Profile
+  <footer class="py-6 text-center text-sm opacity-50">
+    © 2025 Haze's Joestar • On-chain identity in progress...
   </footer>
 
-  <!-- Initialize Particle.js -->
+  <!-- Particle.js Config -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
       particlesJS('particles-js', {
         particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
+          number: { value: 70, density: { enable: true, value_area: 800 } },
           color: { value: "#b967ff" },
           shape: { type: "circle" },
-          opacity: { value: 0.3, random: true },
-          size: { value: 3, random: true },
+          opacity: { value: 0.4, random: true },
+          size: { value: 6, random: true }, // ← DIPERBESAR JADI 6px
           line_linked: {
             enable: true,
-            distance: 150,
-            color: "#6a0dad",
-            opacity: 0.2,
-            width: 1
+            distance: 160,
+            color: "#8a2be2",
+            opacity: 0.18,
+            width: 1.2
           },
           move: {
             enable: true,
-            speed: 1.5,
+            speed: 1.8,
             direction: "none",
             random: true,
             straight: false,
@@ -146,8 +165,8 @@
             resize: true
           },
           modes: {
-            grab: { distance: 140, line_linked: { opacity: 0.6 } },
-            push: { particles_nb: 4 }
+            grab: { distance: 160, line_linked: { opacity: 0.5 } },
+            push: { particles_nb: 5 }
           }
         },
         retina_detect: true
