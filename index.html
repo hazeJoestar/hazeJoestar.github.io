@@ -1,118 +1,158 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haze"s profile</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f7f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haze's Joestar | Web3 Profile</title>
+  
+  <!-- Tailwind CSS (via CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Particle.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
+  <!-- Font: Inter (clean & modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f1b;
+      color: #e0e0ff;
+      overflow-x: hidden;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .glow-text {
+      text-shadow: 0 0 10px #b967ff, 0 0 20px #b967ff;
+    }
+    .social-icon {
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-4px);
+      filter: drop-shadow(0 0 8px #b967ff);
+    }
+  </style>
+
+  <!-- Tailwind config (opsional) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            web3bg: '#0f0f1b',
+            web3accent: '#b967ff',
+            web3text: '#e0e0ff',
+          }
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-            margin-top: 10px;
-        }
-        section {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: #2c3e50;
-        }
-        h4 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .skill {
-            background-color: #e3f2fd;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+      }
+    }
+  </script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>HazeJoestar</h1>
-            <p class="subtitle">Mahasiswa S1 Informatika | Pecinta Teknologi | Fokus pada Pengembangan Web</p>
-        </header>
+<body class="bg-web3bg text-web3text min-h-screen flex flex-col">
 
-        <section id="about">
-            <h2>Tentang Saya</h2>
-            <p>
-                Halo! Saya seorang mahasiswa S1 Informatika yang antusias belajar dan berkembang di bidang teknologi, 
-                dengan fokus pada pengembangan web. Dengan pengalaman magang dan pengetahuan dasar dari kampus, 
-                saya terus belajar dan meningkatkan keterampilan untuk berkontribusi pada proyek-proyek menarik.
-            </p>
-            <p>
-                Saya percaya pada pembelajaran berkelanjutan dan berkembang seiring setiap baris kode yang saya tulis.
-            </p>
-        </section>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
 
-        <section id="projects">
-            <h2>Proyek Unggulan</h2>
-            <p>
-                Berikut adalah beberapa proyek terbaru saya, terpisah dari proyek magang.
-            </p>
-        </section>
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-20 flex flex-col items-center justify-center flex-grow z-10">
+    <div class="text-center max-w-2xl">
+      <!-- Avatar (gunakan GitHub avatar otomatis) -->
+      <img 
+        src="https://github.com/hazeJoestar.png" 
+        alt="Haze's Joestar" 
+        class="w-32 h-32 rounded-full mx-auto mb-6 border-2 border-web3accent shadow-lg"
+      />
 
-        <section id="skills">
-            <h2>Keahlian Saya</h2>
-            <p>
-                Berikut adalah teknologi dan alat yang saya gunakan.
-            </p>
-            <div class="skills-list">
-                <div class="skill">C++</div>
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">Python</div>
-                <div class="skill">Algoritma</div>
-                <div class="skill">Git</div>
-                <div class="skill">GitHub</div>
-                <div class="skill">Geany</div>
-                <div class="skill">MySQL (Dasar)</div>
-            </div>
-        </section>
+      <!-- Nama -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-3 glow-text">Haze's Joestar</h1>
+
+      <!-- Slogan -->
+      <p class="text-lg md:text-xl mb-8 opacity-90">
+        Building decentralized dreams, one commit at a time.
+      </p>
+
+      <!-- Sosial -->
+      <div class="flex justify-center space-x-6 mb-10">
+        <!-- GitHub -->
+        <a href="https://github.com/hazeJoestar" target="_blank" rel="noopener" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.7 6.44-7.27a4.7 4.7 0 0 0-1.44-3.27 4.5 4.5 0 0 0-.08-3.27s-1.44-.44-3.54 1.7a12.36 12.36 0 0 0-6 0C6.22 2.82 4.78 3.26 4.78 3.26a4.5 4.5 0 0 0-.08 3.27 4.7 4.7 0 0 0-1.44 3.27c0 5.57 3.3 6.92 6.44 7.27A3.37 3.37 0 0 0 9 19.13V19"/>
+          </svg>
+        </a>
+
+        <!-- Email (ganti your.email@example.com dengan email Anda) -->
+        <a href="mailto:your.email@example.com" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="bg-gray-900/40 backdrop-blur-sm rounded-xl p-6 border border-web3accent/30">
+        <p class="text-sm md:text-base opacity-80">
+          Exploring the frontier of Web3, smart contracts, and open-source innovation.
+        </p>
+      </div>
     </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-sm opacity-60">
+    © 2025 Haze's Joestar • Web3 Profile
+  </footer>
+
+  <!-- Initialize Particle.js -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#b967ff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.3, random: true },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#6a0dad",
+            opacity: 0.2,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 1.5,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 0.6 } },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+    });
+  </script>
 </body>
 </html>
